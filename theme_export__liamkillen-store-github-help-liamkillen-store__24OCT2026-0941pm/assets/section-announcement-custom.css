@@ -1,0 +1,132 @@
+.announcement-bar-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+
+.announcement-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.announcement-marquee-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.announcement-marquee {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pause on hover */
+.announcement-marquee-container:hover .announcement-marquee {
+  animation-play-state: paused;
+}
+
+.announcement-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.announcement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.announcement-link:hover {
+  opacity: 0.8;
+}
+
+.announcement-icon {
+  font-size: 1.1em;
+  line-height: 1;
+  display: inline-block;
+}
+
+.announcement-text {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  display: inline-block;
+  color: white;
+}
+
+.announcement-separator {
+  margin: 0 10px;
+  opacity: 0.6;
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+/* Text size variations */
+.announcement-bar-section[data-text-size="small"] .announcement-text {
+  font-size: 12px;
+}
+
+.announcement-bar-section[data-text-size="medium"] .announcement-text {
+  font-size: 14px;
+}
+
+.announcement-bar-section[data-text-size="large"] .announcement-text {
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .announcement-text {
+    font-size: 12px;
+  }
+  
+  .announcement-item {
+    padding: 0 15px;
+  }
+  
+  .announcement-separator {
+    margin: 0 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .announcement-text {
+    font-size: 11px;
+  }
+  
+  .announcement-icon {
+    font-size: 1em;
+  }
+  
+  .announcement-item {
+    padding: 0 12px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .announcement-marquee {
+    animation: scroll-left 120s linear infinite;
+  }
+}

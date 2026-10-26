@@ -1,0 +1,290 @@
+{
+  "sections": {
+    "rich_text_VT8XGc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WwXcYb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ranking all my Drum Machines (best to worst)",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WwXcYb"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_drw7Ac": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kpQbbb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who should consider what in the context of this comparison ?",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kpQbbb"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_RYCfbC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_VjLckX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>After years of <strong>hands-on</strong> experience, I ranked every drum machine in my collection.</p><p>I also included which ones I decided to sell (and why). This Blog is designed to help you decide which drum machine is right for you.</p><h2>Where to pick up these pedals:</h2><p><em>** There are purchase links (for available units) throughout this Blog. Using those links would be a huge support to this channel and everything that I do:</em></p><p><strong>👇🏼 If you'd rather the video version of this blog, here it is:</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_VjLckX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "content",
+        "share"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {}
+    },
+    "video_RwcnNJ": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/IH_2OUU-vD8",
+        "cover_image": "shopify://shop_images/Untitled_design_0d5130f8-2f85-4a9e-8533-8538c738d5fc.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_KaGWjQ": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jxj89G": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>- All-round live workhorse:</strong> <strong>Roland TR-8S</strong> — immediate, flexible, hybrid DAW / standalone integration, insane value.</p><p><strong>- Best MIDI/mixer “brain”:</strong> <strong>Elektron Digitakt (OG) / Digitakt II</strong> — elite sequencer, sampling, Overbridge, compact; arguably the best-priced do-it-all box in this comparison.</p><p><strong>- Elektron’s flagship Drum Machine :</strong> <strong>Analog Rytm MkII</strong> — analog sounds mixed with digital samples, multi audio outs/ compatible with Overbridge software; <strong>very</strong> efficient in the studio and on stage.</p><p><strong>- Made for actual drummers:</strong> <strong>Nord Drum 3P</strong> — fast to learn, instantly playable (with drum sticks); shines alongside an acoustic drum kit. </p><p><strong>- Pocket inspiration:</strong> <strong>Teenage Engineering PO-12</strong> — instant beats, lowest price on this list, limited but the vibe is there.</p><p><strong>- Analog-digital oddball:</strong> <strong>Korg Drumlogue</strong> — quirky, thin analog tone; decent i/o but the workflow lags behind Elektron units.</p><p><strong>- Experimental/organic:</strong> <strong>SOMA Pulsar-23</strong> — unique sound + patchable chaos; pricey and very specific (like all SOMA gear), flirts with modular synthesis.</p><p><strong>- Cheap but still analog:</strong> <strong>Arturia DrumBrute Impact</strong> — immediate, fun, individual outs for key voices (rare at this price), very specific sound that people seem to either love or hate.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_jxj89G"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_iwGn9C": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GYTVhP": {
+          "type": "heading",
+          "settings": {
+            "heading": "How I rated each drum machine",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GYTVhP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_hT8A6i": {
+      "type": "rich-text",
+      "blocks": {
+        "text_JG3cJL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I produced basic patterns and rated each machine based on the following:</p><p><strong>- Controls/Standout Features:</strong> How fast can I shape a usable groove?</p><p><strong>- Learning Curve:</strong> Does it take hours, or days to get used to ?</p><p><strong>- Compatibility:</strong> Does it play nice with other boxes? How’s the DAW/USB/MIDI behaviour? Can it be a <strong>brain</strong>?</p><p><strong>- Audio Exporting:</strong> Either via audio or software.</p><p><strong>- Portability:</strong> How convenient is it to carry around ?</p><p><strong>- Bang for Buck:</strong> Does the price reflect its capabilities ?</p><p>I also note <strong>why I sold</strong> a few units in this comparison—no shade; sometimes gear desires overlap and there needs to be a change, in which case, something’s gotta go (in my opinion).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_JG3cJL"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "custom_liquid_roland": {
+      "type": "custom-liquid",
+      "name": "Roland TR-8S",
+      "settings": {
+        "custom_liquid": "<div style=\"max-width: 950px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;\">\n  <h1 style=\"text-align: center;\">Roland TR-8S</h1>\n  <img\n    src=\"https://cdn.shopify.com/s/files/1/0904/5927/5539/files/134cf7ff-eadc-4dcd-a7ab-3b5ebd6e4e0b.jpg?v=1757614105\"\n    style=\"width: 100%; height: auto; display: block; margin-bottom: 20px;\"\n    alt=\"Roland TR-8S\"\n  >\n  <p><strong>Why it slaps:</strong> The most \"what-you-see-is-what-you-play.\" Faders, encoders, motion record, accents—perfect for live improvisation. Quickly loads classic Roland ACB kits (808/909/707/606/CR-78) plus user samples. Personally, I use the TR-8S specifically for Roland drum sounds and am totally happy with just that. Doubles as a <strong>USB audio interface + MIDI controller + standalone drum machine - </strong>all at once if you'd like and it's especially tight with Ableton.</p>\n  <p><strong>Where it falls short:</strong> It can sound a little <strong>thin</strong> in the low end; also not ideal as the MIDI <strong>brain.</strong> It likes to follow instead.</p>\n  <p><strong>Scores</strong><br/>\n  Controls/Features: <strong>8.6/10</strong><br/>\n  Learning Curve: <strong>9.5/10</strong><br/>\n  Compatibility: <strong>8.0/10</strong><br/>\n  Audio Exporting: <strong>9.0/10</strong> (USB multitrack + <strong>6</strong> assignable individual audio outs)<br/>\n  Portability: <strong>8.0/10</strong><br/>\n  Bang for Buck: <strong>10/10</strong> (used prices are absurdly good)</p>\n  <p><strong>Best for:</strong> Live techno/house sets, hybrid DAW workflows, players who want hands-on immediacy.</p>\n  <p><em>Pro Tip:</em> If your TR-8S feels thin live, layer <strong>weighted 909-style kicks,</strong> possibly straight from an Ableton session (if that's what you're combining it with).</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "custom_liquid_digitakt": {
+      "type": "custom-liquid",
+      "name": "Elektron Digitakt I & II",
+      "settings": {
+        "custom_liquid": "<div style=\"max-width: 950px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;\">\n  <h1 style=\"text-align: center;\">Elektron Digitakt I &amp; II</h1>\n  <img\n    src=\"https://cdn.shopify.com/s/files/1/0904/5927/5539/files/DIGITAKT_II_SAMPLE_SLICING_IS_HERE_2025_YT_THUMB_8196c736-f347-446a-a0e5-c61d75051518.png?v=1757614477\"\n    style=\"width: 100%; height: auto; display: block; margin-bottom: 20px;\"\n    alt=\"Elektron Digitakt I &amp; II\"\n  >\n  <p><strong>Why it slaps:</strong> Elektron sequencers are an absolute cheat code: <strong>per-step parameter locks, micro-timing, trig conditions, sample chopping</strong>. The Digitakt II is equipped with up to <strong>16 audio tracks</strong> (audio or MIDI), deeper FX/mixer pages, and song tools compared to the OG Digitone.</p>\n  <p><strong>Trade-offs:</strong> More menu pages than TR-8S; feels like a <strong>production tool / brain</strong> first, performance surface second (unless you pre-template your set). The Digitakt is still a very hands on instrument, but just in a different way.</p>\n  <p><strong>Scores</strong><br/>\n  Controls/Features: <strong>8.7/10</strong><br/>\n  Learning Curve: <strong>7.0/10</strong> (if you're new to Elektron) / <strong>8.0/10</strong> (if you're Elektron-familiar)<br/>\n  Compatibility: <strong>10/10</strong> (MIDI brain + Overbridge, stellar CC control in a tiny box)<br/>\n  Audio Exporting: <strong>7.5/10</strong> (stereo out; multitrack via Overbridge)<br/>\n  Portability: <strong>9.5/10</strong><br/>\n  Bang for Buck: <strong>9.6/10</strong> (OG Digitakt is a steal!! - DT2 still very fair)</p>\n  <p><strong>Best for:</strong> Producers who are sequencer centric and want one box to compose, control and mix external gear- then bounce stems later into <a href=\"https://www.elektron.se/overbridge\" target=\"_blank\">Overbridge</a>. If you produce techno music - the Digitakt II is a perfect tool for you.</p>\n  <p><em>Pro Tip:</em> I would suggest leaning into param locks and trig conditions with any Elektron sequencer. Here's a video where I explore that in real time 👇🏼</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "video_pHgLiA": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/fIlcErBiNRU",
+        "cover_image": "shopify://shop_images/It_s_hards_t_o_beat_the_Digitakt_YT_thumbnail.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_rytm": {
+      "type": "custom-liquid",
+      "name": "Elektron Analog Rytm MKII",
+      "settings": {
+        "custom_liquid": "<div style=\"max-width: 950px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;\">\n  <h1 style=\"text-align: center;\">Elektron Analog Rytm MKII</h1>\n  <img\n    src=\"https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Analog_Rytm_MKII_Using_as_intended_drum_machine_YT_Thumbnail_82f84de1-e5a6-4a82-81ab-c34a39f27294.png?v=1757615467\"\n    style=\"width: 100%; height: auto; display: block; margin-bottom: 20px;\"\n    alt=\"Elektron Analog Rytm MKII\"\n  >\n  <p><strong>Why it slaps:</strong> Deepest and highest quality sounds in this comparison - <strong>especially</strong> for techno music (kicks/claps/rims), plus <strong>sample layering per voice is a plus.</strong> You can layer analog and digital sounds over the same voice. It has performance pads, scenes, and <strong>8 audio outs -</strong> which is killer in a production setting. The Analog Rytm MKII really makes you feel like a musician either in the studio or live on stage.</p>\n  <p><strong>Gaps:</strong> No dedicated internal mixer (like the Digitakt) which makes it a follower and not a leader in terms of midi syncing.</p>\n  <p><strong>Scores</strong><br/>\n  Controls/Features: <strong>9.5/10</strong><br/>\n  Learning Curve: <strong>8.0/10</strong><br/>\n  Compatibility: <strong>8.9/10</strong><br/>\n  Audio Exporting: <strong>10/10</strong> (Overbridge + <strong>8</strong> assignable outs across <strong>12</strong> voices)<br/>\n  Portability: <strong>8.3/10</strong><br/>\n  Bang for Buck: <strong>8.9/10</strong> (pricey, but earns it)</p>\n  <p><strong>Best for:</strong> People who want their favourite techno artist's favourite drum machine.</p>\n  <p><em>Pro Tip:</em> Combine longer digital samples over top of short hi hat samples to get these interesting \"swarming\" types of effects along with your percussion rhythms.</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "video_kyziaT": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/JWNLAnbieiM",
+        "cover_image": "shopify://shop_images/nothing.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_nord": {
+      "type": "custom-liquid",
+      "name": "Nord Drum 3P",
+      "settings": {
+        "custom_liquid": "<div style=\"max-width: 950px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;\">\n  <h1 style=\"text-align: center;\">Nord Drum 3P</h1>\n  <img\n    src=\"https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Nord_Drum_3P_Oxi_One_YT_Thumb_14ca9620-17c6-4962-be78-a3e861ca61a2.png?v=1757615748\"\n    style=\"width: 100%; height: auto; display: block; margin-bottom: 20px;\"\n    alt=\"Nord Drum 3P\"\n  >\n  <p><strong>Why it slaps:</strong> It's actually really meant for a drummer, lightning-fast to learn, pads are performance-ready, a neat <strong>bridge</strong> between acoustic drumming and synth percussion.</p>\n  <p><strong>Gaps:</strong> Presets don't wow me as a synth user, editor reportedly buggy, <strong>stereo out only</strong>.</p>\n  <p><strong>Scores</strong><br/>\n  Controls/Features: <strong>7.2/10</strong><br/>\n  Learning Curve: <strong>9.1/10</strong><br/>\n  Compatibility: <strong>6.9/10</strong><br/>\n  Audio Exporting: <strong>3.0/10</strong> (stereo only)<br/>\n  Portability: <strong>8.0/10</strong><br/>\n  Bang for Buck: <strong>7.9/10</strong> (better value used)</p>\n  <p><strong>Best for:</strong> Drummers adding electronic colour to an acoustic kit.</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "custom_liquid_po12": {
+      "type": "custom-liquid",
+      "name": "Teenage Engineering PO-12 Rhythm",
+      "settings": {
+        "custom_liquid": "<div style=\"max-width: 950px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;\">\n  <h1 style=\"text-align: center;\">Teenage Engineering PO-12 &quot;Rhythm&quot;</h1>\n  <img\n    src=\"https://cdn.shopify.com/s/files/1/0904/5927/5539/files/POs_I_kept_YT_thumbnail.png?v=1757615851\"\n    style=\"width: 100%; height: auto; display: block; margin-bottom: 20px;\"\n    alt=\"Teenage Engineering PO-12\"\n  >\n  <p><strong>Why it slaps:</strong> Pure <strong>constraint-driven</strong> fun: 16 punchy sounds, transient/tune per voice, pattern chains. Dirt-cheap inspiration.</p>\n  <p><strong>Gaps:</strong> Mono output, almost no real MIDI/DAW integration, you'll hit the ceiling quickly (and that's fine).</p>\n  <p><strong>Scores</strong><br/>\n  Controls/Features: <strong>8.0/10</strong><br/>\n  Learning Curve: <strong>10/10</strong><br/>\n  Compatibility: <strong>4.5/10</strong><br/>\n  Audio Exporting: <strong>4.0/10</strong><br/>\n  Portability: <strong>10/10</strong><br/>\n  Bang for Buck: <strong>9.6/10</strong></p>\n  <p><strong>Why I sold it:</strong> I moved on to deeper boxes; PO-12 is still great as a pocket scratchpad.</p>\n  <p><em>Pro Tip:</em> Run the PO-12 through your favourite distortion pedal and you're guaranteed to have some fun.</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "rich_text_VT8XGc",
+    "rich_text_drw7Ac",
+    "rich_text_RYCfbC",
+    "main",
+    "video_RwcnNJ",
+    "rich_text_KaGWjQ",
+    "rich_text_iwGn9C",
+    "rich_text_hT8A6i",
+    "custom_liquid_roland",
+    "custom_liquid_digitakt",
+    "video_pHgLiA",
+    "custom_liquid_rytm",
+    "video_kyziaT",
+    "custom_liquid_nord",
+    "custom_liquid_po12"
+  ]
+}

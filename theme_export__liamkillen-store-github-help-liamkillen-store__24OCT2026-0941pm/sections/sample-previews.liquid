@@ -1,0 +1,419 @@
+<div id="shopify-section-product-previews" class="shopify-section">
+  <style>
+    #shopify-section-product-previews {
+      background: #000000;
+      padding: 40px 0;
+    }
+
+    .productPreviewContainer {
+      background: #262528;
+      padding: 60px;
+      padding-bottom: 40px;
+      border-radius: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .productPreviewContainer h1, .productPreviewContainer h4 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .productPreviewContainer h4 {
+      text-transform: uppercase;
+      color: #394856;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    .productPreviewContainer h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .productPreviewContainer > img {
+      display: flex;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    .productPreviewSection {
+      width: 1280px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px 10px;
+      padding-top: 17.5px;
+      margin: auto;
+    }
+
+    .productPreviewSection .preview-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .productPreviewSection .preview-player {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .productPreviewSection h5 {
+      text-align: center;
+      margin: 0;
+      font-weight: 400;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #ffffff !important;
+    }
+
+    .productPreviewSection h6 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+    }
+
+    .previewTeaserText {
+      color: #3a3a3a !important;
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+      margin: 0 auto 17.5px auto !important;
+    }
+
+    .waveform {
+      width: calc(100% - 50px);
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+      min-height: 30px;
+      display: block !important; /* Override :empty display:none */
+    }
+
+    .waveform > div {
+      width: 100% !important;
+      height: 30px !important;
+      display: block;
+    }
+
+    /* Override global :empty rule for waveform containers */
+    div.waveform:empty {
+      display: block !important;
+    }
+
+    .waveformButton {
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .productPreviewSection a {
+      display: block;
+      color: #bd0e0e;
+      margin: 17.5px auto;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .productPreviewSection a i {
+      font-size: 13px;
+      margin-left: 7px;
+    }
+
+    .productPreviewSection a:hover {
+      color: #bd0e0e;
+      text-decoration: underline;
+    }
+
+    .debug-info {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid red;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      .productPreviewContainer {
+        width: calc(100% - 40px);
+        padding: 40px 20px;
+        margin: 0 20px;
+      }
+
+      #shopify-section-product-previews {
+        padding: 20px 0;
+      }
+
+      .productPreviewSection {
+        width: 100%;
+      }
+
+      .productPreviewContainer h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .productPreviewSection {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .productPreviewContainer {
+        padding: 40px 30px;
+        border-radius: 20px;
+        margin: 0 20px;
+      }
+
+      .productPreviewContainer h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+
+      #shopify-section-product-previews {
+        padding: 20px 0;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .productPreviewSection {
+        grid-template-columns: 1fr;
+      }
+
+      .productPreviewContainer {
+        padding: 30px 20px;
+        border-radius: 16px;
+        margin: 0 16px;
+      }
+
+      #shopify-section-product-previews {
+        padding: 16px 0;
+      }
+    }
+  </style>
+
+  {% comment %}Get the currently selected variant or first variant{% endcomment %}
+  {% if product.selected_or_first_available_variant %}
+    {% assign current_variant = product.selected_or_first_available_variant %}
+  {% else %}
+    {% assign current_variant = product.variants.first %}
+  {% endif %}
+
+  {% comment %}Get audio previews from variant metafield{% endcomment %}
+  {% assign previews = current_variant.metafields.custom.previews.value %}
+  
+  {% if previews != blank %}
+  <section class="productPreviewContainer">
+    <div class="productPreviewSection" data-variant-id="{{ current_variant.id }}">
+      {% comment %}Each preview is a complete grid item with player and title{% endcomment %}
+      {% for preview in previews %}
+        {% assign filename = preview.url | split: '/' | last | split: '?' | first | replace: '_', ' ' | replace: '-', '' | replace: '.wav', '' | replace: '.mp3', '' | replace: '.WAV', '' | replace: '.MP3', '' %}
+        <div class="preview-item">
+          <div class="preview-player">
+            <img
+              id="playPauseButton{{ forloop.index }}"
+              class="waveformButton"
+              src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129"
+              width="30"
+              height="30"
+              alt="Play button">
+            <div id="waveform{{ forloop.index }}" class="waveform"><!-- waveform --></div>
+          </div>
+          <h5 id="title{{ forloop.index }}">{{ filename }}</h5>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <script type="module">
+    import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+    // Initialize function that sets up all wavesurfers
+    function initializeWavesurfers() {
+      const wavesurfers = [];
+      const previews = [
+        {% for preview in previews %}
+          {
+            url: {{ preview.url | default: preview | json }},
+            title: {{ preview.alt | default: 'Audio Preview' | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
+
+      console.log('=== INITIALIZING WAVESURFERS ===');
+      console.log('Audio previews loaded:', previews);
+      console.log('Number of previews:', previews.length);
+
+      // Verify all containers exist before creating wavesurfers
+      const missingContainers = [];
+      for (let i = 1; i <= previews.length; i++) {
+        const container = document.querySelector(`#waveform${i}`);
+        if (!container) {
+          missingContainers.push(i);
+        }
+      }
+
+      if (missingContainers.length > 0) {
+        console.error('Missing waveform containers:', missingContainers);
+        console.log('Retrying in 100ms...');
+        setTimeout(initializeWavesurfers, 100);
+        return;
+      }
+
+      console.log('All containers verified, creating wavesurfers...');
+
+      // Function to pause all wavesurfers except the one playing
+      function pauseAllExcept(exceptIndex) {
+        wavesurfers.forEach((ws, index) => {
+          if (index !== exceptIndex && ws) {
+            try {
+              ws.pause();
+            } catch (e) {
+              console.error(`Error pausing wavesurfer ${index}:`, e);
+            }
+          }
+        });
+      }
+
+      // Create wavesurfer instances for each preview
+      previews.forEach((preview, index) => {
+        const wsIndex = index + 1;
+        const containerId = `#waveform${wsIndex}`;
+        const container = document.querySelector(containerId);
+
+        console.log(`\n--- Creating wavesurfer ${wsIndex} ---`);
+        console.log(`Container ID: ${containerId}`);
+        console.log(`Container element:`, container);
+        console.log(`URL: ${preview.url}`);
+
+        if (!container) {
+          console.error(`Container ${containerId} not found, skipping`);
+          wavesurfers.push(null);
+          return;
+        }
+
+        try {
+          const wavesurfer = WaveSurfer.create({
+            container: containerId,
+            height: 30,
+            waveColor: '#D6D9DF',
+            progressColor: '#9F96A6',
+            cursorWidth: 0,
+            barWidth: 2,
+            barGap: 1,
+            barRadius: 2,
+            normalize: true,
+            backend: 'WebAudio',
+            mediaControls: false,
+            interact: true
+          });
+
+          wavesurfers.push(wavesurfer);
+          console.log(`✓ Wavesurfer ${wsIndex} instance created`);
+
+          const playPauseButton = document.querySelector(`#playPauseButton${wsIndex}`);
+
+          if (playPauseButton) {
+            playPauseButton.addEventListener("click", function (e) {
+              console.log(`Play/Pause clicked for wavesurfer ${wsIndex}`);
+              pauseAllExcept(index);
+              wavesurfer.playPause();
+            });
+            console.log(`✓ Click handler added for button ${wsIndex}`);
+          } else {
+            console.error(`✗ Button not found: #playPauseButton${wsIndex}`);
+          }
+
+          // Event listeners
+          wavesurfer.on('load', function(url) {
+            console.log(`Wavesurfer ${wsIndex} loading:`, url);
+          });
+
+          wavesurfer.on('loading', function(percent) {
+            console.log(`Wavesurfer ${wsIndex} loading progress:`, percent + '%');
+          });
+
+          wavesurfer.on('decode', function(duration) {
+            console.log(`Wavesurfer ${wsIndex} decoded, duration:`, duration);
+          });
+
+          wavesurfer.on('ready', function() {
+            console.log(`✓ Wavesurfer ${wsIndex} ready`);
+          });
+
+          wavesurfer.on("play", function (e) {
+            console.log(`Wavesurfer ${wsIndex} playing`);
+            if (playPauseButton) {
+              playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+            }
+          });
+
+          wavesurfer.on("pause", function (e) {
+            console.log(`Wavesurfer ${wsIndex} paused`);
+            if (playPauseButton) {
+              playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+            }
+          });
+
+          wavesurfer.on('error', function(error) {
+            console.error(`✗ Wavesurfer ${wsIndex} error:`, error);
+          });
+
+          // Load the audio file
+          console.log(`Loading audio for wavesurfer ${wsIndex}:`, preview.url);
+          wavesurfer.load(preview.url);
+
+        } catch (error) {
+          console.error(`✗ Failed to create wavesurfer ${wsIndex}:`, error);
+          wavesurfers.push(null);
+        }
+      });
+
+      console.log('\n=== INITIALIZATION COMPLETE ===');
+      console.log('Total wavesurfers created:', wavesurfers.filter(ws => ws !== null).length);
+      console.log('Failed wavesurfers:', wavesurfers.filter(ws => ws === null).length);
+    }
+
+    // Check if DOM is already loaded, if so run immediately, otherwise wait for DOMContentLoaded
+    if (document.readyState === 'loading') {
+      console.log('DOM still loading, waiting for DOMContentLoaded...');
+      document.addEventListener('DOMContentLoaded', initializeWavesurfers);
+    } else {
+      // DOM is already loaded, run immediately
+      console.log('DOM already loaded, initializing immediately...');
+      initializeWavesurfers();
+    }
+  </script>
+  {% else %}
+    <div class="debug-info">
+      <h3 style="color: red;">SECTION NOT RENDERING</h3>
+      <p>The previews check failed. See debug info above.</p>
+    </div>
+  {% endif %}
+
+  {% schema %}
+    {
+      "name": "MH - Product Previews (D",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "DEBUG VERSION: This will show diagnostic information. Remove debug divs once working."
+        }
+      ],
+      "presets": [
+        {
+          "name": "MH - Product Previews (DEBUG)",
+          "category": "Custom"
+        }
+      ]
+    }
+  {% endschema %}
+  
+</div>

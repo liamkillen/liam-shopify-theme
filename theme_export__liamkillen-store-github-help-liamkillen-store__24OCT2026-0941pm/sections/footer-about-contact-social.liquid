@@ -1,0 +1,218 @@
+{% comment %}
+  Footer — About/Contact + Social + Newsletter
+  - Works with theme color schemes (color_scheme setting)
+  - Four columns: About, Contact, Social, Newsletter
+{% endcomment %}
+
+<section class="ft-acs color-{{ section.settings.color_scheme }}" role="contentinfo">
+  <div class="ft-acs__inner">
+    <div class="ft-acs__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'text' -%}
+            <div class="ft-acs__block ft-acs__block--text" {{ block.shopify_attributes }}>
+              {%- if block.settings.title != blank -%}
+                <p class="ft-acs__title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              <div class="ft-acs__rte">{{ block.settings.body }}</div>
+            </div>
+
+          {%- when 'social' -%}
+            <div class="ft-acs__block ft-acs__block--social" {{ block.shopify_attributes }}>
+              {%- if block.settings.title != blank -%}
+                <p class="ft-acs__title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              <ul class="ft-acs__social" role="list">
+                {%- if block.settings.facebook_url != blank -%}
+                  <li>
+                    <a href="{{ block.settings.facebook_url }}" class="ft-acs__tap" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+                      <svg role="presentation" focusable="false" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.183 21.85v-8.868H7.2V9.526h2.983V6.982a4.17 4.17 0 0 1 4.44-4.572 22.33 22.33 0 0 1 2.667.144v3.084h-1.83a1.44 1.44 0 0 0-1.713 1.68v2.208h3.423l-.447 3.456h-2.97v8.868h-3.57Z" fill="currentColor"/>
+                      </svg>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if block.settings.instagram_url != blank -%}
+                  <li>
+                    <a href="{{ block.settings.instagram_url }}" class="ft-acs__tap" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+                        <svg role="presentation" focusable="false" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true">
+                            <!-- Outer rounded square -->
+                            <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Lens -->
+                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Flash dot -->
+                            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if block.settings.youtube_url != blank -%}
+                  <li>
+                    <a href="{{ block.settings.youtube_url }}" class="ft-acs__tap" target="_blank" rel="noopener" aria-label="Follow on YouTube">
+                      <svg role="presentation" focusable="false" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.44 5.243c.929.244 1.66.963 1.909 1.876.451 1.654.451 5.106.451 5.106s0 3.452-.451 5.106a2.681 2.681 0 0 1-1.91 1.876c-1.684.443-8.439.443-8.439.443s-6.754 0-8.439-.443a2.682 2.682 0 0 1-1.91-1.876c-.45-1.654-.45-5.106-.45-5.106s0-3.452.45-5.106a2.681 2.681 0 0 1 1.91-1.876c1.685-.443 8.44-.443 8.44-.443s6.754 0 8.438.443Zm-5.004 6.982L9.792 15.36V9.091l5.646 3.134Z" fill="currentColor"/>
+                      </svg>
+                    </a>
+                  </li>
+                {%- endif -%}
+              </ul>
+            </div>
+
+          {%- when 'newsletter' -%}
+            <div class="ft-acs__block ft-acs__block--nl" {{ block.shopify_attributes }}>
+              {%- if block.settings.title != blank -%}
+                <p class="ft-acs__title">{{ block.settings.title }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.blurb != blank -%}
+                <div class="ft-acs__rte ft-acs__blurb">{{ block.settings.blurb }}</div>
+              {%- endif -%}
+
+              {%- form 'customer', id: 'FooterNewsletter-Form' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="ft-acs__field">
+                  <input
+                    id="FooterNewsletterEmail-{{ section.id }}"
+                    class="ft-acs__input"
+                    type="email"
+                    name="contact[email]"
+                    autocomplete="email"
+                    placeholder="{{ block.settings.placeholder }}"
+                    required
+                  >
+                  <button class="ft-acs__submit" type="submit" aria-label="{{ block.settings.button_label }}">
+                    <svg role="presentation" focusable="false" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </button>
+                </div>
+
+                {%- if form.errors -%}
+                  <div class="ft-acs__msg ft-acs__msg--error" role="alert">
+                    {{ form.errors | default_errors }}
+                  </div>
+                {%- endif -%}
+
+                {%- if form.posted_successfully? -%}
+                  <div class="ft-acs__msg ft-acs__msg--success" role="status">
+                    {{ block.settings.success_message }}
+                  </div>
+                {%- endif -%}
+              {%- endform -%}
+            </div>
+
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {% style %}
+    .ft-acs { padding: 32px 0; }
+    .ft-acs__inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    .ft-acs__grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .ft-acs__title { font-weight: 700; margin: 0 0 8px; }
+    .ft-acs__social { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; }
+    .ft-acs__tap { display: inline-flex; }
+    .ft-acs__icon { display: block; }
+
+    .ft-acs__field { position: relative; display: flex; align-items: center; }
+    .ft-acs__input { flex: 1; padding: 12px; border: 1px solid currentColor; border-radius: 24px; background: transparent; color: inherit; }
+    .ft-acs__submit { margin-left: -40px; background: none; border: none; cursor: pointer; }
+    .ft-acs__msg { margin-top: 8px; font-size: 14px; }
+    .ft-acs__msg--error { color: #b00020; }
+    .ft-acs__msg--success { color: #0a7a2f; }
+
+    @media (min-width: 750px) {
+      .ft-acs__grid { grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); }
+    }
+
+.ft-acs__blurb { margin: 0 0 12px; opacity: .9; }
+
+
+    /* Force white links and icons regardless of theme scheme */
+.ft-acs a,
+.ft-acs a:visited { color: #fff !important; }
+
+.ft-acs a:hover,
+.ft-acs a:focus { color: #fff !important; opacity: .85; }
+
+.ft-acs .ft-acs__tap,
+.ft-acs .ft-acs__submit { color: #fff !important; }
+
+/* Social SVGs follow currentColor */
+.ft-acs .ft-acs__tap svg [stroke] { stroke: currentColor !important; }
+
+/* Ensure newsletter arrow is white (it uses stroke=currentColor) */
+.ft-acs .ft-acs__submit svg { display: block; }
+
+  {% endstyle %}
+</section>
+
+{% schema %}
+{
+  "name": "Footer Custom",
+  "tag": "section",
+  "class": "section ft-acs-section",
+  "enabled_on": { "groups": ["footer"], "templates": ["*"] },
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text block",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "About" },
+        { "type": "richtext", "id": "body", "label": "Content", "default": "<p>Add your copy here.</p>" }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social links",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Follow us" },
+        { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+        { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+        { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter signup",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Sign up for latest discounts, tips and releases." },
+        { "type": "richtext", "id": "blurb", "label": "Details", "default": "<p>Receive updates</p>"},
+        { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "E-mail" },
+        { "type": "text", "id": "button_label", "label": "Button label (aria)", "default": "Subscribe" },
+        { "type": "text", "id": "success_message", "label": "Success message", "default": "Thanks for subscribing." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Custom",
+      "blocks": [
+        { "type": "text", "settings": { "title": "About", "body": "<p>Our story began with a simple desire…</p>" } },
+        { "type": "text", "settings": { "title": "Contact Us", "body": "<p><a href=\"mailto:info@example.com\">info@example.com</a></p>" } },
+        { "type": "social" },
+        { "type": "newsletter" }
+      ]
+    }
+  ]
+}
+{% endschema %}

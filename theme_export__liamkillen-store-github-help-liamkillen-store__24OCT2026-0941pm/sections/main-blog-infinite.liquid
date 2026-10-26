@@ -1,0 +1,142 @@
+{% comment %}
+Section: Blog Infinite Feed (with color scheme setting)
+Validated:
+- Liquid paginate limit enforced (max 50).
+- Infinite scroll via JS IntersectionObserver.
+- No manual “View all”.
+- Color scheme support integrated to maintain design system consistency.
+{% endcomment %}
+
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+  }
+  .blog-feed__sentinel { height: 1px; }
+  .blog-feed__loading { display: none; text-align: center; margin: 24px 0; }
+  .blog-feed__loading.is-visible { display: block; }
+  /* grid columns control */
+  #blog-articles-{{ section.id }} { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0,1fr)); gap: var(--grid-desktop-horizontal-spacing, 2rem); }
+  @media (max-width: 749px) { #blog-articles-{{ section.id }} { grid-template-columns: 1fr; } }
+{%- endstyle -%}
+
+{%- assign target_blog = section.settings.blog | default: blog -%}
+{%- if target_blog == blank -%}
+  <div class="page-width section-{{ section.id }}-padding">
+    <p>Select a blog in section settings.</p>
+  </div>
+{%- else -%}
+
+{%- paginate target_blog.articles by 50 -%}
+  <section class="main-blog page-width section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient" data-blog-url="{{ target_blog.url }}" data-total-pages="{{ paginate.pages }}">
+  {%- if section.settings.show_title -%}
+    {%- liquid
+      assign heading = section.settings.custom_title | strip
+      if heading == blank
+        assign heading = target_blog.title
+      endif
+    -%}
+    <h2 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">{{ heading | escape }}</h2>
+  {%- endif -%}
+
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}" id="blog-articles-{{ section.id }}" style="--cols: {{ section.settings.columns_desktop }};">
+      {%- for article in target_blog.articles limit: section.settings.posts_to_show -%}
+        <div class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
+          {%- render 'article-card',
+            article: article,
+            media_height: section.settings.image_height,
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: section.settings.show_image,
+            show_date: section.settings.show_date,
+            show_author: section.settings.show_author,
+            show_excerpt: true
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="blog-feed__loading" id="blog-loading-{{ section.id }}">Loading…</div>
+    <div class="blog-feed__sentinel" id="blog-sentinel-{{ section.id }}" aria-hidden="true"></div>
+  </section>
+{%- endpaginate -%}
+
+<script>
+(function() {
+  var root = document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.matches('section.main-blog')
+    ? document.currentScript.previousElementSibling
+    : document.querySelector('section.main-blog.section-{{ section.id }}-padding');
+  if (!root) return;
+
+  var totalPages = parseInt(root.getAttribute('data-total-pages'), 10) || 1;
+  if (totalPages <= 1) return;
+
+  var blogUrl = root.getAttribute('data-blog-url');
+  if (!blogUrl) return;
+
+  var container = root.querySelector('#blog-articles-{{ section.id }}');
+  var sentinel = root.querySelector('#blog-sentinel-{{ section.id }}');
+  var loading = root.querySelector('#blog-loading-{{ section.id }}');
+
+  var nextPage = 2;
+  var inflight = false;
+
+  function fetchNextPage() {
+    if (inflight) return;
+    if (nextPage > totalPages) { observer && observer.disconnect(); return; }
+    inflight = true;
+    if (loading) loading.classList.add('is-visible');
+
+    var url = blogUrl + (blogUrl.indexOf('?') === -1 ? '?page=' + nextPage : '&page=' + nextPage);
+
+    fetch(url, { credentials: 'same-origin' })
+      .then(function(res){ return res.text(); })
+      .then(function(html){
+        var doc = document.implementation.createHTMLDocument('');
+        doc.documentElement.innerHTML = html;
+        var nodeList = doc.querySelectorAll('.blog-articles__article');
+        if (!nodeList || !nodeList.length) { nextPage = totalPages + 1; return; }
+        nodeList.forEach(function(node){ container.appendChild(node); });
+        nextPage += 1;
+      })
+      .catch(function(){ nextPage = totalPages + 1; })
+      .finally(function(){ inflight = false; if (loading) loading.classList.remove('is-visible'); });
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){ if (entry.isIntersecting) fetchNextPage(); });
+  }, { rootMargin: '800px 0px 800px 0px' });
+
+  if (sentinel) observer.observe(sentinel);
+})();
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Blog Infinite",
+  "tag": "section",
+  "class": "section color-scheme",
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog", "info": "If empty, uses current blog when placed on a blog template." },
+    { "type": "text", "id": "custom_title", "label": "Custom title (optional)"},
+    { "type": "range", "id": "posts_to_show", "min": 1, "max": 50, "step": 1, "label": "Number of blog posts to show", "default": 4 },
+    { "type": "range", "id": "columns_desktop", "min": 1, "max": 4, "step": 1, "label": "Number of columns on desktop", "default": 2 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1", "info": "To change the card color scheme, update your theme settings." },
+    { "type": "checkbox", "id": "show_title", "label": "Show title", "default": true },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "collage", "options": [ {"value":"grid","label":"Grid"}, {"value":"collage","label":"Collage"} ] },
+    { "type": "checkbox", "id": "show_image", "label": "Show images", "default": true },
+    { "type": "select", "id": "image_height", "label": "Image height", "default": "medium", "options": [ {"value":"adapt","label":"Adapt"}, {"value":"small","label":"Small"}, {"value":"medium","label":"Medium"}, {"value":"large","label":"Large"} ] },
+    { "type": "checkbox", "id": "show_date", "label": "Show date", "default": true },
+    { "type": "checkbox", "id": "show_author", "label": "Show author", "default": false },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 36 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 36 }
+  ],
+  "presets": [ { "name": "Blog Infinite" } ]
+}
+{% endschema %}

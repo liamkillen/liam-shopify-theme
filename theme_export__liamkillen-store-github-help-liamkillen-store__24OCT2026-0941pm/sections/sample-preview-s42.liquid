@@ -1,0 +1,525 @@
+<div id="shopify-section-product-previews" class="shopify-section">
+  <style>
+    .productPreviewContainer {
+      background: #121313;
+      padding: 60px;
+      padding-bottom: 40px;
+    }
+
+    .productPreviewContainer h1, .productPreviewContainer h4 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .productPreviewContainer h4 {
+      text-transform: uppercase;
+      color: #394856;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    .productPreviewContainer h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .productPreviewContainer > img {
+      display: flex;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    .productPreviewSection {
+      width: 100%;
+      max-width: 1280px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 20px; /* optional spacing between columns */
+      padding-top: 17.5px;
+      margin: auto;
+    }
+
+    .productPreviewSection hr {
+      margin: 10px 0;
+      border-bottom: none;
+    }
+
+    .productPreviewSection > div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+
+    .productPreviewSection h5 {
+      text-align: center;
+      margin: 0;
+      font-weight: 100;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #ffffff !important;
+    }
+
+    .productPreviewSection h6 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+    }
+
+    .previewTeaserText {
+      color: #3a3a3a !important;
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+      margin: 0 auto 17.5px auto !important;
+    }
+
+    .waveform {
+      width: calc(100% - 50px);
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+    }
+
+    .waveformButton {
+      padding: 0;
+    }
+
+    .productPreviewSection a {
+      display: block;
+      color: #bd0e0e;
+      margin: 17.5px auto;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .productPreviewSection a i {
+      font-size: 13px;
+      margin-left: 7px;
+    }
+
+    .productPreviewSection a:hover {
+      color: #bd0e0e;
+      text-decoration: underline;
+    }
+
+    .waveform div:empty {
+      display: block;
+    }
+
+.productPreviewSection > div {
+  display: flex;
+  flex-direction: column;  /* stack play+waveform and h5 */
+  align-items: center;
+}
+
+    .productPreviewSection h5 {
+  margin-top: 10px;
+}
+
+
+    @media only screen and (max-width: 1280px) {
+      .productPreviewContainer {
+        width: 100%;
+      }
+
+      .productPreviewSection {
+        width: 100%;
+      }
+
+      .productPreviewContainer h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .productPreviewSection {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+  </style>
+
+<section class="productPreviewContainer">
+  <div class="productPreviewSection">
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton5" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform5" class="waveform"><div></div></div>
+      </div>
+      <h5>Texture 1</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton6" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform6" class="waveform"><div></div></div>
+      </div>
+      <h5>Texture 2</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton7" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform7" class="waveform"><div></div></div>
+      </div>
+      <h5>Texture 3</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton8" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform8" class="waveform"><div></div></div>
+      </div>
+      <h5>Texture 4</h5>
+    </div>
+
+     <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton9" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform9" class="waveform"><div></div></div>
+      </div>
+      <h5>Texture 5</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton3" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform3" class="waveform"><div></div></div>
+      </div>
+      <h5>Performance 1</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton4" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform4" class="waveform"><div></div></div>
+      </div>
+      <h5>Performance 2</h5>
+    </div>
+
+        <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform" class="waveform"><div></div></div>
+      </div>
+       <div style="height:10px;"></div>
+      <h5>Drone 1</h5>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; width:100%;">
+        <img id="playPauseButton2" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform2" class="waveform"><div></div></div>
+      </div>
+      <h5>Drone 2</h5>
+    </div>
+
+  </div>
+</section>
+
+
+  <script type="module">
+    import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+    const wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Drone_1.mp3?v=1753750476'
+    });
+
+    const playPauseButton  = document.querySelector("#playPauseButton");
+    playPauseButton.addEventListener("click", function (e) {
+      wavesurfer.playPause();
+      wavesurfer2.pause();
+      wavesurfer3.pause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer.on("play", function (e) {
+      playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer.on("pause", function (e) {
+      playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer2 = WaveSurfer.create({
+      container: '#waveform2',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Drone_2.mp3?v=1753750476'
+    });
+
+    const playPauseButton2  = document.querySelector("#playPauseButton2");
+    playPauseButton2.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.playPause();
+      wavesurfer3.pause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer2.on("play", function (e) {
+      playPauseButton2.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer2.on("pause", function (e) {
+      playPauseButton2.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer3 = WaveSurfer.create({
+      container: '#waveform3',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Performance_1.mp3?v=1753750490'
+    });
+
+    const playPauseButton3  = document.querySelector("#playPauseButton3");
+    playPauseButton3.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer3.playPause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer3.on("play", function (e) {
+      playPauseButton3.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer3.on("pause", function (e) {
+      playPauseButton3.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer4 = WaveSurfer.create({
+      container: '#waveform4',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Performance_2.mp3?v=1753750486'
+    });
+
+    const playPauseButton4  = document.querySelector("#playPauseButton4");
+    playPauseButton4.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer4.playPause();
+      wavesurfer3.pause();
+      wavesurfer5.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer4.on("play", function (e) {
+      playPauseButton4.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer4.on("pause", function (e) {
+      playPauseButton4.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer5 = WaveSurfer.create({
+      container: '#waveform5',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Texture_1.mp3?v=1753750485'
+    });
+
+    const playPauseButton5  = document.querySelector("#playPauseButton5");
+    playPauseButton5.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer5.playPause();
+      wavesurfer4.pause();
+      wavesurfer3.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer5.on("play", function (e) {
+      playPauseButton5.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer5.on("pause", function (e) {
+      playPauseButton5.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer6 = WaveSurfer.create({
+      container: '#waveform6',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Texture_2.mp3?v=1753750484'
+    });
+
+    const playPauseButton6  = document.querySelector("#playPauseButton6");
+    playPauseButton6.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer6.playPause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer3.pause();
+      wavesurfer7.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer6.on("play", function (e) {
+      playPauseButton6.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer6.on("pause", function (e) {
+      playPauseButton6.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer7 = WaveSurfer.create({
+      container: '#waveform7',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Texture_3.mp3?v=1753750488'
+    });
+
+    const playPauseButton7  = document.querySelector("#playPauseButton7");
+    playPauseButton7.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer7.playPause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer3.pause();
+      wavesurfer6.pause();
+      wavesurfer8.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer7.on("play", function (e) {
+      playPauseButton7.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer7.on("pause", function (e) {
+      playPauseButton7.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer8 = WaveSurfer.create({
+      container: '#waveform8',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Texture_4.mp3?v=1753750482'
+    });
+
+    const playPauseButton8  = document.querySelector("#playPauseButton8");
+    playPauseButton8.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer8.playPause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer3.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+            wavesurfer9.pause();
+    });
+
+    wavesurfer8.on("play", function (e) {
+      playPauseButton8.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer8.on("pause", function (e) {
+      playPauseButton8.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+        const wavesurfer9 = WaveSurfer.create({
+      container: '#waveform9',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/Solar_42_Texture_5.mp3?v=1753750476'
+    });
+
+    const playPauseButton9  = document.querySelector("#playPauseButton9");
+    playPauseButton9.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer8.pause();
+      wavesurfer4.pause();
+      wavesurfer5.pause();
+      wavesurfer3.pause();
+      wavesurfer6.pause();
+      wavesurfer7.pause();
+        wavesurfer9.playPause();
+    });
+
+    wavesurfer9.on("play", function (e) {
+      playPauseButton9.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer9.on("pause", function (e) {
+      playPauseButton9.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+  </script>
+
+  {% schema %}
+    {
+      "name": "S42 Samples - Previews",
+      "settings": [],
+      "presets": [
+        {
+          "name": "S42 Samples - Previews",
+          "category": "Custom",
+          "blocks": []
+        }
+      ]
+    }
+  {% endschema %}
+  
+</div>
+

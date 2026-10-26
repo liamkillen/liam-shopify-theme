@@ -1,0 +1,249 @@
+<div id="shopify-section-product-previews" class="shopify-section">
+  <style>
+    .productPreviewContainer {
+      background: #121313;
+      padding: 60px;
+      padding-bottom: 40px;
+    }
+
+    .productPreviewContainer h1, .productPreviewContainer h4 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .productPreviewContainer h4 {
+      text-transform: uppercase;
+      color: #394856;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    .productPreviewContainer h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .productPreviewContainer > img {
+      display: flex;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    .productPreviewSection {
+      width: 1280px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding-top: 17.5px;
+      margin: auto;
+    }
+
+    .productPreviewSection hr {
+      margin: 10px 0;
+      border-bottom: none;
+    }
+
+    .productPreviewSection > div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+
+    .productPreviewSection h5 {
+      text-align: center;
+      margin: 0;
+      font-weight: 100;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #ffffff !important;
+    }
+
+    .productPreviewSection h6 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+    }
+
+    .previewTeaserText {
+      color: #3a3a3a !important;
+      text-align: center;
+      font-weight: 100;
+      font-size: 12px;
+      margin: 0 auto 17.5px auto !important;
+    }
+
+    .waveform {
+      width: calc(100% - 50px);
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+    }
+
+    .waveformButton {
+      padding: 0;
+    }
+
+    .productPreviewSection a {
+      display: block;
+      color: #bd0e0e;
+      margin: 17.5px auto;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .productPreviewSection a i {
+      font-size: 13px;
+      margin-left: 7px;
+    }
+
+    .productPreviewSection a:hover {
+      color: #bd0e0e;
+      text-decoration: underline;
+    }
+
+    .waveform div:empty {
+      display: block;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      .productPreviewContainer {
+        width: 100%;
+      }
+
+      .productPreviewSection {
+        width: 100%;
+      }
+
+      .productPreviewContainer h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+
+  <section class="productPreviewContainer">
+    <div class="productPreviewSection">
+      <div>
+        <img id="playPauseButton" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform" class="waveform"><div></div></div>
+      </div>
+      <div>
+        <img id="playPauseButton2" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform2" class="waveform"><div></div></div>
+      </div>
+      <div>
+        <img id="playPauseButton3" class="waveformButton" src="https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129" width="30" height="30">
+        <div id="waveform3" class="waveform"><div></div></div> 
+      </div>
+
+      <h5>Experimental Dub Drums</h5>
+      <h5>Uptempo Dub Drums</h5>
+      <h5>Ambient Dub Drums</h5>
+
+      <hr style="background-color:transparent;" />
+          <hr style="background-color:transparent;" />
+          <hr style="background-color:transparent;" />
+      
+    </div>
+
+  </section>
+
+  <script type="module">
+    import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+    const wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/dbd-exp.wav?v=1744466111'
+    });
+
+    const playPauseButton  = document.querySelector("#playPauseButton");
+    playPauseButton.addEventListener("click", function (e) {
+      wavesurfer.playPause();
+      wavesurfer2.pause();
+      wavesurfer3.pause();
+    });
+
+    wavesurfer.on("play", function (e) {
+      playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer.on("pause", function (e) {
+      playPauseButton.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer2 = WaveSurfer.create({
+      container: '#waveform2',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/dbd-uptempo.wav?v=1744466109'
+    });
+
+    const playPauseButton2  = document.querySelector("#playPauseButton2");
+    playPauseButton2.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.playPause();
+      wavesurfer3.pause();
+    });
+
+    wavesurfer2.on("play", function (e) {
+      playPauseButton2.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer2.on("pause", function (e) {
+      playPauseButton2.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+    const wavesurfer3 = WaveSurfer.create({
+      container: '#waveform3',
+      cursorWidth: '0',
+      height: '30',
+      normalize: 'true',
+      waveColor: '#D6D9DF',
+      progressColor: '#9F96A6',
+      url: 'https://cdn.shopify.com/s/files/1/0904/5927/5539/files/dbd-ambient.wav?v=1744466110'
+    });
+
+    const playPauseButton3  = document.querySelector("#playPauseButton3");
+    playPauseButton3.addEventListener("click", function (e) {
+      wavesurfer.pause();
+      wavesurfer2.pause();
+      wavesurfer3.playPause();
+    });
+
+    wavesurfer3.on("play", function (e) {
+      playPauseButton3.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/pause_white.png?v=1758032566";
+    });
+
+    wavesurfer3.on("pause", function (e) {
+      playPauseButton3.src = "https://cdn.shopify.com/s/files/1/0904/5927/5539/files/play_center_white.png?v=1757962129";
+    });
+
+  </script>
+
+  {% schema %}
+    {
+      "name": "DBD - Product Previews",
+      "settings": [],
+      "presets": [
+        {
+          "name": "DBD - Product Previews",
+          "category": "Custom",
+          "blocks": []
+        }
+      ]
+    }
+  {% endschema %}
+  
+</div>
+
